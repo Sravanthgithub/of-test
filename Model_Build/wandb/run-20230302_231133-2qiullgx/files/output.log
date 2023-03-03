@@ -1,0 +1,355 @@
+using `logging_steps` to initialize `eval_steps` to 10
+PyTorch: setting up devices
+The default value for the training argument `--report_to` will change in v5 (from all installed integrations to none). In v5, you will need to use `--report_to all` to get the same behavior as now. You should start updating your code and make this info disappear :-).
+The following columns in the training set don't have a corresponding argument in `BertForQuestionAnswering.forward` and have been ignored: offset_mapping. If offset_mapping are not expected by `BertForQuestionAnswering.forward`,  you can safely ignore this message.
+c:\Users\Sravanth\AppData\Local\Programs\Python\Python39\lib\site-packages\transformers\optimization.py:306: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+***** Running training *****
+  Num examples = 11679
+  Num Epochs = 3
+  Instantaneous batch size per device = 16
+  Total train batch size (w. parallel, distributed & accumulation) = 16
+  Gradient Accumulation steps = 1
+  Total optimization steps = 2190
+  Number of trainable parameters = 108893186
+Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"
+using `logging_steps` to initialize `eval_steps` to 10
+PyTorch: setting up devices
+The default value for the training argument `--report_to` will change in v5 (from all installed integrations to none). In v5, you will need to use `--report_to all` to get the same behavior as now. You should start updating your code and make this info disappear :-).
+The following columns in the training set don't have a corresponding argument in `BertForQuestionAnswering.forward` and have been ignored: offset_mapping. If offset_mapping are not expected by `BertForQuestionAnswering.forward`,  you can safely ignore this message.
+c:\Users\Sravanth\AppData\Local\Programs\Python\Python39\lib\site-packages\transformers\optimization.py:306: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+***** Running training *****
+  Num examples = 11679
+  Num Epochs = 3
+  Instantaneous batch size per device = 16
+  Total train batch size (w. parallel, distributed & accumulation) = 16
+  Gradient Accumulation steps = 1
+  Total optimization steps = 2190
+  Number of trainable parameters = 108893186
+Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"
+loading configuration file config.json from cache at C:\Users\Sravanth/.cache\huggingface\hub\models--t5-small\snapshots\3479082dc36f8a4730936ef1c9b88cd8b0835c53\config.json
+Model config T5Config {
+  "_name_or_path": "t5-small",
+  "architectures": [
+    "T5ForConditionalGeneration"
+  ],
+  "d_ff": 2048,
+  "d_kv": 64,
+  "d_model": 512,
+  "decoder_start_token_id": 0,
+  "dense_act_fn": "relu",
+  "dropout_rate": 0.1,
+  "eos_token_id": 1,
+  "feed_forward_proj": "relu",
+  "initializer_factor": 1.0,
+  "is_encoder_decoder": true,
+  "is_gated_act": false,
+  "layer_norm_epsilon": 1e-06,
+  "model_type": "t5",
+  "n_positions": 512,
+  "num_decoder_layers": 6,
+  "num_heads": 8,
+  "num_layers": 6,
+  "output_past": true,
+  "pad_token_id": 0,
+  "relative_attention_max_distance": 128,
+  "relative_attention_num_buckets": 32,
+  "task_specific_params": {
+    "summarization": {
+      "early_stopping": true,
+      "length_penalty": 2.0,
+      "max_length": 200,
+      "min_length": 30,
+      "no_repeat_ngram_size": 3,
+      "num_beams": 4,
+      "prefix": "summarize: "
+    },
+    "translation_en_to_de": {
+      "early_stopping": true,
+      "max_length": 300,
+      "num_beams": 4,
+      "prefix": "translate English to German: "
+    },
+    "translation_en_to_fr": {
+      "early_stopping": true,
+      "max_length": 300,
+      "num_beams": 4,
+      "prefix": "translate English to French: "
+    },
+    "translation_en_to_ro": {
+      "early_stopping": true,
+      "max_length": 300,
+      "num_beams": 4,
+      "prefix": "translate English to Romanian: "
+    }
+  },
+  "transformers_version": "4.25.1",
+  "use_cache": true,
+  "vocab_size": 32128
+}
+loading weights file pytorch_model.bin from cache at C:\Users\Sravanth/.cache\huggingface\hub\models--t5-small\snapshots\3479082dc36f8a4730936ef1c9b88cd8b0835c53\pytorch_model.bin
+All model checkpoint weights were used when initializing T5ForConditionalGeneration.
+All the weights of T5ForConditionalGeneration were initialized from the model checkpoint at t5-small.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use T5ForConditionalGeneration for predictions without further training.
+Could not locate the tokenizer configuration file, will try to use the model config instead.
+loading configuration file config.json from cache at C:\Users\Sravanth/.cache\huggingface\hub\models--t5-small\snapshots\3479082dc36f8a4730936ef1c9b88cd8b0835c53\config.json
+Model config T5Config {
+  "_name_or_path": "t5-small",
+  "architectures": [
+    "T5ForConditionalGeneration"
+  ],
+  "d_ff": 2048,
+  "d_kv": 64,
+  "d_model": 512,
+  "decoder_start_token_id": 0,
+  "dense_act_fn": "relu",
+  "dropout_rate": 0.1,
+  "eos_token_id": 1,
+  "feed_forward_proj": "relu",
+  "initializer_factor": 1.0,
+  "is_encoder_decoder": true,
+  "is_gated_act": false,
+  "layer_norm_epsilon": 1e-06,
+  "model_type": "t5",
+  "n_positions": 512,
+  "num_decoder_layers": 6,
+  "num_heads": 8,
+  "num_layers": 6,
+  "output_past": true,
+  "pad_token_id": 0,
+  "relative_attention_max_distance": 128,
+  "relative_attention_num_buckets": 32,
+  "task_specific_params": {
+    "summarization": {
+      "early_stopping": true,
+      "length_penalty": 2.0,
+      "max_length": 200,
+      "min_length": 30,
+      "no_repeat_ngram_size": 3,
+      "num_beams": 4,
+      "prefix": "summarize: "
+    },
+    "translation_en_to_de": {
+      "early_stopping": true,
+      "max_length": 300,
+      "num_beams": 4,
+      "prefix": "translate English to German: "
+    },
+    "translation_en_to_fr": {
+      "early_stopping": true,
+      "max_length": 300,
+      "num_beams": 4,
+      "prefix": "translate English to French: "
+    },
+    "translation_en_to_ro": {
+      "early_stopping": true,
+      "max_length": 300,
+      "num_beams": 4,
+      "prefix": "translate English to Romanian: "
+    }
+  },
+  "transformers_version": "4.25.1",
+  "use_cache": true,
+  "vocab_size": 32128
+}
+loading file spiece.model from cache at C:\Users\Sravanth/.cache\huggingface\hub\models--t5-small\snapshots\3479082dc36f8a4730936ef1c9b88cd8b0835c53\spiece.model
+loading file tokenizer.json from cache at C:\Users\Sravanth/.cache\huggingface\hub\models--t5-small\snapshots\3479082dc36f8a4730936ef1c9b88cd8b0835c53\tokenizer.json
+loading file added_tokens.json from cache at None
+loading file special_tokens_map.json from cache at None
+loading file tokenizer_config.json from cache at None
+loading configuration file config.json from cache at C:\Users\Sravanth/.cache\huggingface\hub\models--t5-small\snapshots\3479082dc36f8a4730936ef1c9b88cd8b0835c53\config.json
+Model config T5Config {
+  "_name_or_path": "t5-small",
+  "architectures": [
+    "T5ForConditionalGeneration"
+  ],
+  "d_ff": 2048,
+  "d_kv": 64,
+  "d_model": 512,
+  "decoder_start_token_id": 0,
+  "dense_act_fn": "relu",
+  "dropout_rate": 0.1,
+  "eos_token_id": 1,
+  "feed_forward_proj": "relu",
+  "initializer_factor": 1.0,
+  "is_encoder_decoder": true,
+  "is_gated_act": false,
+  "layer_norm_epsilon": 1e-06,
+  "model_type": "t5",
+  "n_positions": 512,
+  "num_decoder_layers": 6,
+  "num_heads": 8,
+  "num_layers": 6,
+  "output_past": true,
+  "pad_token_id": 0,
+  "relative_attention_max_distance": 128,
+  "relative_attention_num_buckets": 32,
+  "task_specific_params": {
+    "summarization": {
+      "early_stopping": true,
+      "length_penalty": 2.0,
+      "max_length": 200,
+      "min_length": 30,
+      "no_repeat_ngram_size": 3,
+      "num_beams": 4,
+      "prefix": "summarize: "
+    },
+    "translation_en_to_de": {
+      "early_stopping": true,
+      "max_length": 300,
+      "num_beams": 4,
+      "prefix": "translate English to German: "
+    },
+    "translation_en_to_fr": {
+      "early_stopping": true,
+      "max_length": 300,
+      "num_beams": 4,
+      "prefix": "translate English to French: "
+    },
+    "translation_en_to_ro": {
+      "early_stopping": true,
+      "max_length": 300,
+      "num_beams": 4,
+      "prefix": "translate English to Romanian: "
+    }
+  },
+  "transformers_version": "4.25.1",
+  "use_cache": true,
+  "vocab_size": 32128
+}
+c:\Users\Sravanth\AppData\Local\Programs\Python\Python39\lib\site-packages\transformers\models\t5\tokenization_t5_fast.py:155: FutureWarning: This tokenizer was incorrectly instantiated with a model max length of 512 which will be corrected in Transformers v5.
+For now, this behavior is kept to avoid breaking backwards compatibility when padding/encoding with `truncation is True`.
+- Be aware that you SHOULD NOT rely on t5-small automatically truncating your input to 512 when padding/encoding.
+- If you want to encode/pad to sequences longer than 512 you can either instantiate this tokenizer with `model_max_length` or pass `max_length` when encoding/padding.
+- To avoid this warning, please instantiate this tokenizer with `model_max_length` set to your preferred value.
+  warnings.warn(
+loading configuration file config.json from cache at C:\Users\Sravanth/.cache\huggingface\hub\models--vblagoje--bart_lfqa\snapshots\5493d5be6812cdb4835e004ce17ea2082cc25b03\config.json
+Model config BartConfig {
+  "_name_or_path": "vblagoje/bart_lfqa",
+  "_num_labels": 3,
+  "activation_dropout": 0.0,
+  "activation_function": "gelu",
+  "add_bias_logits": false,
+  "add_final_layer_norm": false,
+  "architectures": [
+    "BartForConditionalGeneration"
+  ],
+  "attention_dropout": 0.0,
+  "bos_token_id": 0,
+  "classif_dropout": 0.0,
+  "classifier_dropout": 0.0,
+  "d_model": 1024,
+  "decoder_attention_heads": 16,
+  "decoder_ffn_dim": 4096,
+  "decoder_layerdrop": 0.0,
+  "decoder_layers": 12,
+  "decoder_start_token_id": 2,
+  "dropout": 0.1,
+  "encoder_attention_heads": 16,
+  "encoder_ffn_dim": 4096,
+  "encoder_layerdrop": 0.0,
+  "encoder_layers": 12,
+  "eos_token_id": 2,
+  "forced_eos_token_id": 2,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1",
+    "2": "LABEL_2"
+  },
+  "init_std": 0.02,
+  "is_encoder_decoder": true,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1,
+    "LABEL_2": 2
+  },
+  "max_position_embeddings": 1024,
+  "model_type": "bart",
+  "normalize_before": false,
+  "normalize_embedding": true,
+  "num_hidden_layers": 12,
+  "output_past": false,
+  "pad_token_id": 1,
+  "prefix": " ",
+  "scale_embedding": false,
+  "static_position_embeddings": false,
+  "task_specific_params": {
+    "summarization": {
+      "early_stopping": true,
+      "length_penalty": 2.0,
+      "max_length": 142,
+      "min_length": 56,
+      "no_repeat_ngram_size": 3,
+      "num_beams": 4
+    }
+  },
+  "transformers_version": "4.25.1",
+  "use_cache": true,
+  "vocab_size": 50265
+}
+loading weights file pytorch_model.bin from cache at C:\Users\Sravanth/.cache\huggingface\hub\models--vblagoje--bart_lfqa\snapshots\5493d5be6812cdb4835e004ce17ea2082cc25b03\pytorch_model.bin
+loading configuration file config.json from cache at C:\Users\Sravanth/.cache\huggingface\hub\models--vblagoje--bart_lfqa\snapshots\5493d5be6812cdb4835e004ce17ea2082cc25b03\config.json
+Model config BartConfig {
+  "_name_or_path": "vblagoje/bart_lfqa",
+  "_num_labels": 3,
+  "activation_dropout": 0.0,
+  "activation_function": "gelu",
+  "add_bias_logits": false,
+  "add_final_layer_norm": false,
+  "architectures": [
+    "BartForConditionalGeneration"
+  ],
+  "attention_dropout": 0.0,
+  "bos_token_id": 0,
+  "classif_dropout": 0.0,
+  "classifier_dropout": 0.0,
+  "d_model": 1024,
+  "decoder_attention_heads": 16,
+  "decoder_ffn_dim": 4096,
+  "decoder_layerdrop": 0.0,
+  "decoder_layers": 12,
+  "decoder_start_token_id": 2,
+  "dropout": 0.1,
+  "encoder_attention_heads": 16,
+  "encoder_ffn_dim": 4096,
+  "encoder_layerdrop": 0.0,
+  "encoder_layers": 12,
+  "eos_token_id": 2,
+  "forced_eos_token_id": 2,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1",
+    "2": "LABEL_2"
+  },
+  "init_std": 0.02,
+  "is_encoder_decoder": true,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1,
+    "LABEL_2": 2
+  },
+  "max_position_embeddings": 1024,
+  "model_type": "bart",
+  "normalize_before": false,
+  "normalize_embedding": true,
+  "num_hidden_layers": 12,
+  "output_past": false,
+  "pad_token_id": 1,
+  "prefix": " ",
+  "scale_embedding": false,
+  "static_position_embeddings": false,
+  "task_specific_params": {
+    "summarization": {
+      "early_stopping": true,
+      "length_penalty": 2.0,
+      "max_length": 142,
+      "min_length": 56,
+      "no_repeat_ngram_size": 3,
+      "num_beams": 4
+    }
+  },
+  "transformers_version": "4.25.1",
+  "use_cache": true,
+  "vocab_size": 50265
+}
