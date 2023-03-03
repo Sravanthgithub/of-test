@@ -1,3 +1,8 @@
+# Procedure
+
+![image](https://user-images.githubusercontent.com/77894804/222638510-5094a69c-92bc-4cba-a2dc-2e09028523e5.png)
+
+
 # AI Junior Developer (Intern) Test 
 Welcome! and thank you for applying! 
 
